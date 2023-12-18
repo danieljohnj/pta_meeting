@@ -1,25 +1,23 @@
 <?php
     require_once 'includes/auth_check.php';
-    require_once 'includes/db/conn.php';
-    if(!$_GET['id']){
-
+    require_once 'db/conn.php';
+    if(!isset($_GET['id'])){
         include 'includes/errormessage.php';
-        header("location: viewrecords.php");
+        header("Location: viewrecords.php");
+    }else{
+        // Get ID values
+        $id = $_GET['id'];
 
-    }else{  //get id value
-            $id = $_GET['id'];
-            //call delete function
-            $result = $crud->deleteAttendee($id);
-
-            //redirect to list
-            if($result)
-            {
-                header("Location: viewrecords.php");
-            }
-            else{
-                include 'includes/errormessage.php';
-            }
-
+        //Call Delete function
+        $result = $crud->deleteAttendee($id);
+        //Redirect to list
+        if($result)
+        {
+            header("Location: viewrecords.php");
+        }
+        else{
+            include 'includes/errormessage.php';
+        }
     }
 
-
+?>

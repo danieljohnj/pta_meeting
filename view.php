@@ -1,7 +1,7 @@
 <?php 
 
 
-    $title='View';
+    $title='View Records';
     require_once 'includes/header.php';
     require_once 'includes/db/conn.php';
     require_once 'includes/auth_check.php';
@@ -21,7 +21,7 @@
 
         
 ?>
-<img src=" <?php echo empty($result['avatar_path']) ? "uploads/675991875.jpg" : $result['avatar_path'];?>" class= "rounded-circle" style="width: 20%; height: 20%" />
+<img src=" <?php echo empty($result['avatar_path']) ? "uploads/675991875.jpg" : $result['avatar_path'] ; ?>" class= "rounded-circle" style="width: 20%; height: 20%" />
 
 <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -39,36 +39,17 @@
                     <p class="card-text">Contact: <?php echo $result['contactnumber'];?></p>
 
 
-                    <!--<a href="index.php" class="card-link">Re-enter</a>-->
+                    
                 </div>
    </div>
 <br/>
         <a href="viewrecords.php" class="btn btn-info">Back to list</a>
         <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a>
-        <a onclick="return confirm('are you sure you want to delete this record?');"
-        href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
+        <a onclick="return confirm('are you sure you want to delete this record?');"href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
 
 
    <?php } ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
 <br>
 <br>
 <br>

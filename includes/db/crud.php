@@ -11,7 +11,7 @@
 
                     }
 
-                public function insert($fname, $lname, $dob, $email, $contact, $choice, $avatar_path){
+                public function insertAttendees($fname, $lname, $dob, $email, $contact, $choice, $avatar_path){
 
                     try {
                         //define sql statement to be executed
@@ -30,6 +30,7 @@
                         //execute statement
                         $stmt->execute();
                         return true;
+
                     } catch (PDOException $e) {
                         echo $e->getMessage();
                         return false;
@@ -100,13 +101,28 @@
                     try{
 
                 
-                        $sql = "delete from attendee where attendee_id = :id ";
+                        $sql = "delete from attendee where attendee_id = :id";
                         $stmt = $this->db->prepare($sql);
                         $stmt->bindparam(':id', $id);
                         $stmt->execute();
                         return true;
                 
                     
+                    }catch(PDOException $e) {
+                        echo $e->getMessage();
+                        return false;
+
+                    }
+
+                }
+
+                public function getChoices(){ //public function getSpecialties(){
+
+                    try{
+                        $sql = "SELECT * FROM `choices`";
+                        $result = $this->db->query($sql);
+                        return $result;
+
                     }catch(PDOException $e) {
                         echo $e->getMessage();
                         return false;
@@ -132,20 +148,6 @@
 
                 }
 
-                public function getChoices(){ //public function getSpecialties(){
-
-                    try{
-                        $sql = "SELECT * FROM `choices`";
-                        $result = $this->db->query($sql);
-                        return $result;
-
-                    }catch(PDOException $e) {
-                        echo $e->getMessage();
-                        return false;
-
-                    }
-
-                }
 
                 
             }

@@ -26,7 +26,7 @@
 
         
         //call function to insert and track if success or not
-        $issuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $choice, $destination);
+        $issuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $choice, $destination);
         $specialtyName = $crud->getChoiceById($choice);
         if($issuccess){
             sendemail::sendmail($email, 'Welcome to our 2023 PTA Meeting','you have registered successfully for this year IT conference');

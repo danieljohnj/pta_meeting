@@ -11,7 +11,7 @@
             $dob   = $_POST['dob'];
             $email = $_POST['email'];
             $contact = $_POST['phone'];
-            $specialty = $_POST['choice'];
+            $choice = $_POST['choice'];
         
         //call crud function
 

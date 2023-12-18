@@ -62,7 +62,7 @@
 
                 
                
-                <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="submit" name="submit" class="btn btn-warning btn-block">Submit</button>
         </form>
 
 <br>

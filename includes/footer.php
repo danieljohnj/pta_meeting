@@ -1,5 +1,5 @@
 
-<div id="footer" class="p-3 bg-primary text-white fixed-bottom">
+<div id="footer" class="p-3 bg-warning text-white fixed-bottom">
         <p class="text-center">Copyright &copy; - Parent Teacher's association Attendance System <?php echo date('Y'); ?></p>
     </div>
 

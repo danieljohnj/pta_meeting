@@ -8,7 +8,7 @@
 ?>
       
     <h1 class="text-center">Registration for IT conference</h1>
-            <form method="post" action="success.php" enctype="multipart/form-data">
+            <form method="post" action="success.php" onsubmit="return validateForm()" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="firstname" class="form-label">First Name</label>
@@ -64,6 +64,33 @@
                
                 <button type="submit" name="submit" class="btn btn-warning btn-block">Submit</button>
         </form>
+
+        <script>
+    function validateForm() {
+        var email = document.getElementById('email').value;
+
+        // Check if the email is empty
+        if (email.trim() === "") {
+            alert("Email cannot be empty");
+            return false;
+        }
+
+        // Use AJAX to check if the email already exists
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText === "exists") {
+                    alert("Email already exists");
+                    return false;
+                }
+            }
+        };
+        xhr.open("GET", "check_email.php?email=" + email, true);
+        xhr.send();
+
+        return true;
+    }
+</script>
 
 <br>
 <br>

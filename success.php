@@ -27,7 +27,7 @@
         
         //call function to insert and track if success or not
         $issuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $choice, $destination);
-        $specialtyName = $crud->getChoiceById($choice);
+        $choiceSelected = $crud->getChoiceById($choice);
         if($issuccess){
             sendemail::sendmail($email, 'Welcome to our 2023 PTA Meeting','you have registered successfully for this year IT conference');
             include 'includes/successmessage.php';
@@ -42,14 +42,14 @@
 
 
             <img src=" <?php echo $destination; ?>"class= "rounded-circle" style="width: 20%; height: 20%" />
-<div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">
                         <?php echo $_POST['firstname'].'  '.$_POST['lastname']; ?>
                     
                     </h5>
                     <h6 class="card-subtitle mb-2 text-muted">
-                        <?php echo $specialtyName['name'];?>
+                        <?php echo $choiceSelected['name'];?>
                     </h6>
                     <p class="card-text">Date of Birth: <?php echo$_POST['dob'];?></p>
                     <p class="card-text">Email: <?php echo$_POST['email'];?></p>

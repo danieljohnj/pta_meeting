@@ -77,6 +77,24 @@
 
                 }
 
+
+
+                public function checkEmailExistence($email) {
+                    try {
+                        $sql = "SELECT COUNT(*) FROM parent_attendee WHERE email = :email";
+                        $stmt = $this->db->prepare($sql);
+                        $stmt->bindParam(':email', $email);
+                        $stmt->execute();
+                        $count = $stmt->fetchColumn();
+                
+                        return $count > 0; // Return true if email exists, false otherwise
+                    } catch (PDOException $e) {
+                        echo $e->getMessage();
+                        return false;
+                    }
+                }
+                
+
                 
                 
 

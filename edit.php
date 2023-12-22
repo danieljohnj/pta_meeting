@@ -41,6 +41,8 @@
                    
                 </div>
 
+                
+
                 <div class="form-group">
                     <label for="choice" class="form-label">Are you a:  </label>
                     <select class="form-control" value ="<?php echo $attendee['name']?>" id="choice" name="choice">
@@ -54,11 +56,7 @@
 
 
 
-                <div class="form-group">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" value ="<?php echo $attendee['email']?>" id="email" aria-describedby="emailHelp" name="email">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
+                
 
                 <div class="form-group">
                     <label for="phone" class="form-label">Contact Number</label>
@@ -69,7 +67,7 @@
                 
                
                 <a href="viewrecords.php" class="btn btn-default ">back to list</button>
-                <button type="submit" name="submit" class="btn btn-success ">Save Changes</button>
+                <button type="submit" name="submit" class="btn btn-warning ">Save Changes</button>
 
         </form>
 

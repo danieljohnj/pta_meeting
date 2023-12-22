@@ -24,7 +24,7 @@ include_once 'includes/session.php'
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <a class="navbar-brand" href="index.php">
-            <img src="uploads/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+            <img src="uploads/5555555.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
             PTA Meeting
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltmarkup"
@@ -42,17 +42,15 @@ include_once 'includes/session.php'
             </div>
             <div class="navbar-nav ml-auto">
                 <?php
-                    if (!isset($_SESSION['userid'])) {
+                    if (isset($_SESSION['userid'])) {
                 ?>
-                <a class="nav-item nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
-                <?php } else { ?>
-                <span>Welcome <?php echo $_SESSION['username'] ?>! </span>
+                <span class="navbar-text mx-2">Welcome <?php echo $_SESSION['username'] ?>! </span>
                 <a class="nav-item nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
+                <?php } else { ?>
+                <a class="nav-item nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
                 <?php } ?>
             </div>
         </div>
     </nav>
     <div class="container">
-
-
-<br/>
+        <br/>

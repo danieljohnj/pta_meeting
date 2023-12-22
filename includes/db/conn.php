@@ -1,17 +1,18 @@
 <?php
 //development connection (local)
-    $host = '127.0.0.1';
-    $db =   'pta_db';
-    $user = 'root';
-    $pass = '';
-    $charset = 'utf8mb4';
+    //$host = '127.0.0.1';
+    //$db =   'pta_db';
+    //$user = 'root';
+    //$pass = '';
+    //$charset = 'utf8mb4';
 
     //remote database connection
-    //$host = 'sql.freedb.tech';
-    //$db =   'freedb_php_remote_sql';
-    //$user = 'freedb_mysqltest';
-    //$pass = '8Ets62#%DZZpEc$';
-    //$charset = 'utf8mb4';
+    $host = 'sql5.freesqldatabase.com';
+    $db =   'sql5672080';
+    $user = 'sql5672080';
+    $pass = 'nZPAlf8Qji';
+    $charset = 'utf8mb4';
+
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

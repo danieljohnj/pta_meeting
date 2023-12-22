@@ -21,7 +21,7 @@
 
         
 ?>
-<img src=" <?php echo empty($result['avatar_path']) ? "uploads/88888888.jpg" : $result['avatar_path'] ; ?>" class= "rounded-circle" style="width: 20%; height: 20%" />
+<img src=" <?php echo empty($result['avatar_path']) ? "uploads/7777777.jpg" : $result['avatar_path'] ; ?>" class= "rounded-circle" style="width: 20%; height: 20%" />
 
 <div class="card" style="width: 18rem;">
                 <div class="card-body">

@@ -1,14 +1,16 @@
 <?php 
 
-
     $title='Index';
     require_once 'includes/header.php';
     require_once 'includes/db/conn.php';
-    $results = $crud->getChoices();
+    
+    $choiceResults = $crud->getChoices();
+    $genderResults = $crud->getGenders();
 ?>
       
-    <h1 class="text-center">Registration for IT conference</h1>
-            <form method="post" action="success.php" onsubmit="return validateForm()" enctype="multipart/form-data">
+<h1 class="text-center">Registration for PTA Meeting</h1>
+<form method="post" action="success.php" onsubmit="return validateForm()" enctype="multipart/form-data">
+
 
                 <div class="form-group">
                     <label for="firstname" class="form-label">First Name</label>
@@ -28,16 +30,25 @@
                    
                 </div>
 
+                
+
                 <div class="form-group">
                     <label for="choice" class="form-label">Are you a: </label>
                     <select class="form-control" id="choice" name="choice">
-                      <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
-                        <option value ="<?php echo $r['choice_id']?>"><?php echo $r['name']; ?></option>
-                    <?php }?>
+                        <?php while($choice = $choiceResults->fetch(PDO::FETCH_ASSOC)) {?>
+                            <option value ="<?php echo $choice['choice_id']?>"><?php echo $choice['name']; ?></option>
+                        <?php }?>
                     </select>
                 </div>
 
-
+                <div class="form-group">
+        <label for="gender" class="form-label">Gender:</label>
+        <select class="form-control" id="gender" name="gender">
+            <?php while ($gender = $genderResults->fetch(PDO::FETCH_ASSOC)) { ?>
+                <option value="<?php echo $gender['gender_id'] ?>"><?php echo $gender['gen']; ?></option>
+            <?php } ?>
+        </select>
+        </div>
 
                 <div class="form-group">
                     <label for="email" class="form-label">Email address</label>
